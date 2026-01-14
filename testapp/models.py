@@ -9,3 +9,8 @@ class User(AbstractUser): #for authentication
 
 class Student(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True,related_name='Student')
+    name =  models.CharField(max_length=100)
+    roll_no = models.CharField(max_length=100)
+    email = models.EmailField(max_length=200)
+    phone = models.IntegerField()
+    student_profile_pic = models.ImageField(upload_to="testapp/student_profile_pic",blank=True)
