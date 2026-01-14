@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 # Create your models here.
 
@@ -14,3 +15,7 @@ class Student(models.Model):
     email = models.EmailField(max_length=200)
     phone = models.IntegerField()
     student_profile_pic = models.ImageField(upload_to="testapp/student_profile_pic",blank=True)
+
+    def get_absolute_url(self):
+        return reverse("testapp:student_detail", kwargs={"pk": self.pk})
+    
