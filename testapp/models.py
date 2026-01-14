@@ -26,3 +26,18 @@ class Student(models.Model):
         ordering = ['roll_no']
 
 
+class Teacher(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True,related_name='Teacher')
+    name = models.CharField(max_length=100)
+    subject_name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=200)
+    phone = models.IntegerField()
+    teacher_profile_pic = models.ImageField(upload_to="testapp/teacher_profile_pic",blank=True)
+    class_students = models.ManyToManyField(Student,through="StudentsInClass")
+
+    def get_absolute_url(self):
+        return reverse("testapp:teacher_detail", kwargs={"pk": self.pk})
+
+    def __str__(self):
+        return self.name
+        
