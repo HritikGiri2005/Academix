@@ -19,3 +19,10 @@ class Student(models.Model):
     def get_absolute_url(self):
         return reverse("testapp:student_detail", kwargs={"pk": self.pk})
     
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        ordering = ['roll_no']
+
+
