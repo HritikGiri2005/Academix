@@ -43,4 +43,13 @@ class Teacher(models.Model):
         
 
 class StudentMarks(models.Model):
-    teacher = 
+    teacher = models.ForeignKey(Teacher,related_name='given_marks',on_delete=models.CASCADE)
+    student = models.ForeignKey(Student,related_name='marks',on_delete=models.CASCADE)
+    subject_name = models.CharField(max_length=200)
+    marks_obtained = models.IntegerField()
+    maximum_marks = models.IntegerField()
+
+    def __str__(self):
+        return self.subject_name
+    
+class StudentsInClass(models.Model):
