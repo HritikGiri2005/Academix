@@ -58,3 +58,8 @@ class StudentsInClass(models.Model):
 
     def __str__(self):
         return self.student.name
+    
+    class Meta:
+        unique_together = ('teacher','student')
+
+class MessageToTeacher(models.Model):
