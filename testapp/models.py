@@ -114,7 +114,7 @@ class ClassAssignment(models.Model):
     class Meta:
         ordering = ['-created_at']
 
-class     
+class SubmitAssignment(models)    
 
 
 
