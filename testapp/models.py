@@ -61,7 +61,7 @@ class StudentsInClass(models.Model):
         return self.student.name
     
     class Meta:
-        unique_together = ('teacher','student')
+        unique_together = ('teacher','student')# What does this mean? 👉 A student cannot be added twice to the same teacher’s class.
 
 class MessageToTeacher(models.Model):
     student = models.ForeignKey(Student,related_name='student',on_delete=models.CASCADE)
@@ -76,3 +76,5 @@ class MessageToTeacher(models.Model):
     def save(self,*args, **kwargs):
         self.message_html = misaka.html(self.message)
         super().save(*args, **kwargs)    
+
+
