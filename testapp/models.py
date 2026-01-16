@@ -78,11 +78,22 @@ class MessageToTeacher(models.Model):
         self.message_html = misaka.html(self.message) #The plain text message is converted into HTML using misaka.
         super().save(*args, **kwargs)  
 
-    class Meta:
-        ordering = ['-created_at']
+    class Meta: #Meta is used to give extra instructions to Django about how this model should behave.
+        ordering = ['-created_at'] #What does this mean? Data will be shown by default in descending order of created_at. - means latest first.
         unique_together = ('student','message')
 
-class   
+class ClassNotice(models.Model):
+    teacher = models.ForeignKey(Teacher,related_name='teacher',on_delete=models.CASCADE)
+    students = models.ManyToManyField(Student,related_name='class_notice')
+    created_at = models.DateTimeField(auto_now=True)
+    message = models.TextField()
+    message_html = models.TextField(editable=False)
+
+    def __str__(self):
+        return self.message
+    
+    def save(self,*args, **kwargs):
+        
 
 
 
