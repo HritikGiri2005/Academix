@@ -74,7 +74,8 @@ class MessageToTeacher(models.Model):
         return self.message
 
     def save(self,*args, **kwargs):
-        self.message_html = misaka.html(self.message)
+        self.message_html = misaka.html(self.message) #The plain text message is converted into HTML using misaka.
         super().save(*args, **kwargs)    
+
 
 
