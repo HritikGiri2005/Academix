@@ -93,7 +93,16 @@ class ClassNotice(models.Model):
         return self.message
     
     def save(self,*args, **kwargs):
-        
+        self.message_html = misaka.html(self.message)
+        super().save(*args,**kwargs)
+
+    
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ['teacher','message']
+
+class C
+
 
 
 
