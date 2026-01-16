@@ -53,3 +53,8 @@ class StudentMarks(models.Model):
         return self.subject_name
     
 class StudentsInClass(models.Model):
+    teacher = models.ForeignKey(Teacher,related_name="class_teacher" , on_delete=models.CASCADE)
+    student = models.ForeignKey(Student,related_name="user_student_name", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.student.name
