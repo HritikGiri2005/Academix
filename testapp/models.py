@@ -61,6 +61,7 @@ class StudentsInClass(models.Model):
         return self.student.name
     
     class Meta:
+        ordering = ['-created_at']
         unique_together = ('teacher','student')# What does this mean? 👉 A student cannot be added twice to the same teacher’s class.
 
 class MessageToTeacher(models.Model):
@@ -75,7 +76,13 @@ class MessageToTeacher(models.Model):
 
     def save(self,*args, **kwargs):
         self.message_html = misaka.html(self.message) #The plain text message is converted into HTML using misaka.
-        super().save(*args, **kwargs)    
+        super().save(*args, **kwargs)  
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ('student','message')
+
+class   
 
 
 
