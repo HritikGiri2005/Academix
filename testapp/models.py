@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
+import misaka
 
 # Create your models here.
 
@@ -63,3 +64,15 @@ class StudentsInClass(models.Model):
         unique_together = ('teacher','student')
 
 class MessageToTeacher(models.Model):
+    student = models.ForeignKey(Student,related_name='student',on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher,related_name='teacher',on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True)
+    message = models.TextField()
+    message_html = models.TextField(editable=False)
+
+    def __str__(self):
+        return self.message
+
+    def save(self,*args, **kwargs):
+        self.message_html = misaka.html(self.message)
+        super().save(*args, **kwargs)    
