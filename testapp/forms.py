@@ -15,5 +15,14 @@ class UserForm(UserCreationForm):
 
 ##Teacher Registeration form
 
-class TeacherProfileForm(forms.ModelForm)
+class TeacherProfileForm(forms.ModelForm):
+    class Meta():
+        model = Teacher
+        fields = ['name','subject_name','phone','email']
+        widgets = {
+            'name': forms.TextInput(attrs={'class':'answer'}),
+            'subject_name': forms.TextInput(attrs={'class':'answer'}),
+            'phone':forms.NumberInput(attrs={'class':'answer'}),
+            'email':forms.EmailInput(attrs={'class':'answer'}),
+        }
 
