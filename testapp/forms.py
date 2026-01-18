@@ -13,3 +13,7 @@ class UserForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class':'answer'}),
         }
 
+##Teacher Registeration form
+
+class TeacherProfileForm(forms.ModelForm)
+
