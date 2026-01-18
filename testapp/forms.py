@@ -33,4 +33,4 @@ class TeacherProfileUpdateForm(forms.ModelForm):
         model = Teacher
         fields = ['name','subject_name','email','phone','teacher_profile_pic']
 
-#Student
+#Student Registeration Form
