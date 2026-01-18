@@ -26,3 +26,5 @@ class TeacherProfileForm(forms.ModelForm):
             'email':forms.EmailInput(attrs={'class':'answer'}),
         }
 
+#Teacher Profile Update form
+
