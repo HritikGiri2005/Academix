@@ -55,4 +55,8 @@ class StudentProfileUpdateForm(models.Model):
 ##form for uploading and updating marks
 
 class MarksForm(models.Model):
-    class Meta()
+    class Meta():
+        model = StudentMarks
+        fields = ['subject_name','marks_obtained','maximum_marks']
+
+
