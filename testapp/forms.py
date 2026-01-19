@@ -29,7 +29,7 @@ class TeacherProfileForm(forms.ModelForm):
 #Teacher Profile Update form
 
 class TeacherProfileUpdateForm(forms.ModelForm):
-    class Meta:
+    class Meta():
         model = Teacher
         fields = ['name','subject_name','email','phone','teacher_profile_pic']
 
@@ -48,4 +48,6 @@ class StudentProfileForm(models.Model):
 
 ##Student profile update form
 class StudentProfileUpdateForm(models.Model):
-    
+    class Meta():
+        model = Student
+        fields = ['name','roll_no','email','phone','student_profile_pic']
