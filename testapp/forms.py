@@ -51,3 +51,8 @@ class StudentProfileUpdateForm(models.Model):
     class Meta():
         model = Student
         fields = ['name','roll_no','email','phone','student_profile_pic']
+
+##form for uploading and updating marks
+
+class MarksForm(models.Model):
+    class Meta()
