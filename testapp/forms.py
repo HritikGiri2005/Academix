@@ -34,3 +34,16 @@ class TeacherProfileUpdateForm(forms.ModelForm):
         fields = ['name','subject_name','email','phone','teacher_profile_pic']
 
 #Student Registeration Form
+
+class StudentProfileForm(models.Model):
+    class Meta():
+        model = Student
+        fields = ['name','roll_no','phone','email']
+        widgets = {
+            'name' : forms.TextInput(attrs={'class':'answer'}),
+            'roll_no' : forms.NumberInput(attrs={'class':'answer'}),
+            'phone' : forms.NumberInput(attrs={'class':'answer'}),
+            'email' : forms.EmailInput(attrs={'class':'answer'}),
+        }
+
+##Student profile update form
