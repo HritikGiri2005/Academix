@@ -47,3 +47,5 @@ class StudentProfileForm(models.Model):
         }
 
 ##Student profile update form
+class StudentProfileUpdateForm(models.Model):
+    
