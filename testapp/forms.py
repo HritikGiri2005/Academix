@@ -35,7 +35,7 @@ class TeacherProfileUpdateForm(forms.ModelForm):
 
 #Student Registeration Form
 
-class StudentProfileForm(models.Model):
+class StudentProfileForm(models.ModelForm):
     class Meta():
         model = Student
         fields = ['name','roll_no','phone','email']
@@ -47,16 +47,22 @@ class StudentProfileForm(models.Model):
         }
 
 ##Student profile update form
-class StudentProfileUpdateForm(models.Model):
+class StudentProfileUpdateForm(models.ModelForm):
     class Meta():
         model = Student
         fields = ['name','roll_no','email','phone','student_profile_pic']
 
 ##form for uploading and updating marks
 
-class MarksForm(models.Model):
+class MarksForm(models.ModelForm):
     class Meta():
         model = StudentMarks
         fields = ['subject_name','marks_obtained','maximum_marks']
+
+#Writing Message to teacher
+class MessageForm(models.ModelForm):
+    class Meta():
+        model = MessageToTeacher
+        fie
 
 
