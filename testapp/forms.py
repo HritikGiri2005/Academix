@@ -66,5 +66,9 @@ class MessageForm(models.ModelForm):
         fields = ['message']
 
 class NoticeForm(models.ModelForm):
+    class Meta():
+        model = ClassNotice
+        fields = ['message']
+
 
 
