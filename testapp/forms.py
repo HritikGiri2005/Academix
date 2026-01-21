@@ -65,4 +65,6 @@ class MessageForm(models.ModelForm):
         model = MessageToTeacher
         fields = ['message']
 
+class NoticeForm(models.ModelForm):
+
 
