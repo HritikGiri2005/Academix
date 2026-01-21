@@ -63,6 +63,6 @@ class MarksForm(models.ModelForm):
 class MessageForm(models.ModelForm):
     class Meta():
         model = MessageToTeacher
-        fie
+        fields = ['message']
 
 
