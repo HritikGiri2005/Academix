@@ -76,6 +76,10 @@ class AssignmentForm(forms.ModelForm):
         model = ClassAssignment
         fields = ['assignment_name','assignment']
 
-
+## Form for submitting assignments (student Only)
+class SubmitForm(forms.ModelForm):
+    # class Meta():
+    #     model = SubmitAssignment
+    #     fields = ['submit']
 
 
