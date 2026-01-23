@@ -70,5 +70,6 @@ class NoticeForm(models.ModelForm):
         model = ClassNotice
         fields = ['message']
 
+## Form for uploading and updating assignments (teachers only)
 
 
