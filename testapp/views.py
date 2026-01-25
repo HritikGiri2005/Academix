@@ -4,3 +4,5 @@ from django.views.generic import View,TemplateView,ListView,DetailView,DeleteVie
 from django.utils.decorators import method_decorator
 
 # Create your views here.
+
+
