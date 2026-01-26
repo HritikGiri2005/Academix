@@ -16,7 +16,7 @@ def TeacherSignUp(request):
         user_form = UserForm(data = request.POST)
         teacher_profile_form = TeacherProfileForm(data = request.POST)
 
-        if user_form.is_valid() and teacher_profile_form.is_valid()
+        if user_form.is_valid() and teacher_profile_form.is_valid():
         
          
 
