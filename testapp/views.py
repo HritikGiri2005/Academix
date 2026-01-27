@@ -22,7 +22,9 @@ def TeacherSignUp(request):
             user.is_teacher = True
             user.save()
 
-            profile = teacher
+            profile = teacher_profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
         
          
 
