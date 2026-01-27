@@ -25,6 +25,17 @@ def TeacherSignUp(request):
             profile = teacher_profile_form.save(commit=False)
             profile.user = user
             profile.save()
+
+            registered = True
+        
+        else:
+            print(user_form.errors,teacher_profile_form.errors)
+
+    else:
+        user_form = UserForm()
+        teacher_profile_form = TeacherProfileForm()
+
+    return render(request,'testapp/teacher_signup.html',{'user_form':user_form,'teacher_profile_form':teacher_profile_form,'registered':registered,'user_type':user_type})
         
          
 
