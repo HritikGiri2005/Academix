@@ -1,10 +1,10 @@
-{% extends "classroom/base.html" %}
+{% extends "testapp/base.html" %}
 {% load static %}
 {% block content %}
 
 <div class="student-list">
 <div class="container">
-  <form method='GET' action="{% url 'classroom:teachers_list' %}">
+  <form method='GET' action="{% url 'testapp:teachers_list' %}">
     <p>Serch Teacher: <input type='search' name='q' placeholder='Search'></p>
   </form>
   <div class="row">
@@ -28,7 +28,7 @@
       <p><i class="fas fa-books"></i> Subject Name: {{ teacher.subject_name }}</p>
       <p><i class="far fa-phone"></i> Phone: {{ teacher.phone }}</p>
       <p><i class="far fa-envelope-open-text"></i> Email ID: {{ teacher.email }}</p>
-      <a href="{% url 'classroom:write_message' pk=teacher.pk %}"><p class="add-button">Message</p> </a>
+      <a href="{% url 'testapp:write_message' pk=teacher.pk %}"><p class="add-button">Message</p> </a>
     </div>
   </div>
   </div>
